@@ -79,6 +79,8 @@ loop do
 
   path = requested_file(request_line)
 
+  path = File.join(path, 'index.html') if File.directory?(path)
+
   # Make sure the file exists and is not a directory before attempting to
   # open it
 
